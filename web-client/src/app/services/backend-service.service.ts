@@ -11,4 +11,8 @@ export class BackendService {
   public GetPOIs(): Promise<any> {
     return this.httpClient.get('/api/poi').toPromise();
   }
+
+  public FilterByTitle(searchString: string) : Promise<any> {
+    return this.httpClient.get(`/api/filterByTitle/Poi/${searchString}`).toPromise();
+  }
 }

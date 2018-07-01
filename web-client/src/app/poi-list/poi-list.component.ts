@@ -9,10 +9,20 @@ import { BackendService } from '../services/backend-service.service';
 export class PoiListComponent implements OnInit {
 
   public poiList: any = null;
+  public searchString: string = '';
+
   constructor(private backendService: BackendService) { }
 
   async ngOnInit() {
     this.poiList = await this.backendService.GetPOIs();
   }
 
+  async onKey(event: any) {
+    if(event.which == 13)    
+      this.poiList = await this.backendService.FilterByTitle(this.searchString);        
+  }
+
+  public goTo(id: string){
+    console.log(id);
+  }
 }
