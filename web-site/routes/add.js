@@ -15,6 +15,7 @@ module.exports = (router) => {
         var model = new ConcreteModel( ctx.request.body );
 
         var result = await model.save();
-        ctx.body = ctx.request.body;              
+        ctx.body = ctx.request.body;     
+        ctx.set('Content-Type', `application/json`);             
     });
 }

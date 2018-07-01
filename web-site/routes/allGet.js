@@ -6,5 +6,6 @@ module.exports = (router) => {
 
       var result = await mapping[type].find();
       ctx.body = result;        
+      ctx.set('Content-Type', `application/json`);             
     });
 }

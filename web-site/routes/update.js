@@ -14,5 +14,6 @@ module.exports = (router) => {
         
         var result = await ConcreteModel.findOneAndUpdate({_id: ctx.params.id}, ctx.request.body);        
         ctx.body = ctx.request.body;
+        ctx.set('Content-Type', `application/json`);             
     });
 }

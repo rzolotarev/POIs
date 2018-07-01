@@ -1,6 +1,7 @@
 const Router = require('koa-router');
 const router = new Router();
 
+require('./default')(router);
 require('./getById')(router);
 require('./allGet')(router);
 require('./add')(router);

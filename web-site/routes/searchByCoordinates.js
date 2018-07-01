@@ -11,5 +11,6 @@ module.exports = (router) => {
         ]});
 
         ctx.body = result;
+        ctx.set('Content-Type', `application/json`);             
     })
 }

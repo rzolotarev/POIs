@@ -7,5 +7,6 @@ module.exports = (router) => {
         var regexp = new RegExp(`^${ctx.params.title}`);                
         var result = await model.find({title: regexp });
         ctx.body = result;
+        ctx.set('Content-Type', `application/json`);             
     });
 }
