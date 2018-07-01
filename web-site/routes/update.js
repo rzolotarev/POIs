@@ -1,7 +1,7 @@
-const mapping = require('../mappings');
+var mapping = require('../mappings');
 
 module.exports = (router) => {
-    router.post('/api/poi', async (ctx) => {
+    router.put('/api/poi/:id', async (ctx) => {
         var type = ctx.request.body.type;                
 
         if(!type)
@@ -12,9 +12,7 @@ module.exports = (router) => {
           ctx.throw("There is no an appropriate mapping");
 
         
-        var model = new ConcreteModel( ctx.request.body );
-
-        var result = await model.save();
-        ctx.body = ctx.request.body;              
+        var result = await ConcreteModel.findOneAndUpdate({_id: ctx.params.id}, ctx.request.body);        
+        ctx.body = ctx.request.body;
     });
 }
