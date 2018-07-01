@@ -1,0 +1,16 @@
+<table class="table" *ngIf="poiList">
+  <thead class="thead-dark">
+    <tr>
+      <th>Title</th>
+      <th>Coordinates</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let poi of poiList">
+      <td>{{poi.title}}</td>
+      <td>lattitude:{{poi.longitude}}, longitude:{{poi.lattitude}}</td>
+      <td>{{poi.type}}</td>
+    </tr>
+  </tbody>
+</table>

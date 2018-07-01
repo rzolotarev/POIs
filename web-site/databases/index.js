@@ -13,7 +13,7 @@ exports.initialize = () => {
 var options = { discriminatorKey: 'type' };
 
 var poiSchema = mongoose.Schema({    
-    lattidute : {
+    lattitude : {
         type: Number,
         require: true
     },
