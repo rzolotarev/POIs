@@ -32,6 +32,7 @@ var poiSchema = mongoose.Schema({
 
 PoiModel = exports.PoiModel = mongoose.model('POI', poiSchema);
 
+
 var restaurantSchema = mongoose.Schema({
     rate: {
         type: Number,        
