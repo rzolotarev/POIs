@@ -15,16 +15,19 @@ var options = { discriminatorKey: 'type' };
 var poiSchema = mongoose.Schema({    
     lattitude : {
         type: Number,
-        require: true
+        require: true,
+        index: true
     },
     longitude: {
         type: Number,
-        required: true
+        required: true,
+        index: true
     },
     title: {
         type: String,
-        required: true
-    }
+        required: true,
+        index: true
+    },   
 }, options);
 
 PoiModel = exports.PoiModel = mongoose.model('POI', poiSchema);
