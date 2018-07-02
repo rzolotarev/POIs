@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BackendService } from '../services/backend-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-poi-list',
@@ -11,7 +12,7 @@ export class PoiListComponent implements OnInit {
   public poiList: any = null;
   public searchString: string = '';
 
-  constructor(private backendService: BackendService) { }
+  constructor(private backendService: BackendService, private router: Router) { }
 
   async ngOnInit() {
     this.poiList = await this.backendService.GetPOIs();
@@ -22,7 +23,7 @@ export class PoiListComponent implements OnInit {
       this.poiList = await this.backendService.FilterByTitle(this.searchString);        
   }
 
-  public goTo(id: string){
-    console.log(id);
+  public goTo(poi: any) {    
+    this.router.navigate([`/${poi.type}/`, poi._id]);    
   }
 }

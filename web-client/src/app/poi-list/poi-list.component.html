@@ -12,7 +12,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let poi of poiList" (click)="goTo(poi._id)">
+    <tr *ngFor="let poi of poiList" (click)="goTo(poi)" class="pointer-raw">
       <td>{{poi.title}}</td>
       <td>lattitude:{{poi.longitude}}, longitude:{{poi.lattitude}}</td>
       <td>{{poi.type}}</td>
