@@ -1,5 +1,7 @@
 FROM node
 
+ADD . /app
+
 WORKDIR /app
 
 COPY package.json .

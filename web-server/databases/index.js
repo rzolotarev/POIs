@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const DATABASE_CONNECTION = 'mongodb://localhost:27017/test';
+const DATABASE_CONNECTION = 'mongodb://localhost:27017/PoiRomanZolotarev';
 
 exports.initialize = () => {
     mongoose.connect(DATABASE_CONNECTION);
